@@ -10,6 +10,7 @@ import fotos from "./fotos.json"
 import { useState, useEffect } from "react"
 import ModalZoom from "./components/ModalZoom"
 import Pie from "./components/Pie"
+import Tags from "./components/Galeria/Tags"
 
 
 const FondoGradiente = styled.div`
@@ -83,12 +84,18 @@ const App = () => {
           />
           <MainContainer>
             <BarraLateral />
-            <ContenidoGaleria>
+            <ContenidoGaleria >
               <Banner texto = "La galería más completa de fotos del espacio"
-                backgroundImage={banner} />
+                backgroundImage={banner} 
+                />
+
                 
               <Galeria alSeleccionarFoto={foto => setFotoSeleccionada(foto) } 
-              fotos={fotosDeGaleria} alAlternarFavorito={alAlternarFavorito}/> 
+                fotos={fotosDeGaleria} 
+                alAlternarFavorito={alAlternarFavorito}
+                filtro={filtro}
+                tag={tag}
+                setTag={setTag}/> 
             </ContenidoGaleria>
           </MainContainer>    
         </AppContainer>
